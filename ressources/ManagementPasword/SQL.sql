@@ -4,14 +4,14 @@
 
 
 #------------------------------------------------------------
-# Table: User
+# Table: Person
 #------------------------------------------------------------
 
-CREATE TABLE User(
-        user_email    Varchar (50) NOT NULL ,
-        user_pseudo   Varchar (50) ,
-        user_password Varchar (50)
-	,CONSTRAINT User_PK PRIMARY KEY (user_email)
+CREATE TABLE Person(
+        person_email    Varchar (50) NOT NULL ,
+        person_pseudo   Varchar (50) ,
+        person_password Varchar (50)
+	,CONSTRAINT Person_PK PRIMARY KEY (person_email)
 )ENGINE=InnoDB;
 
 
@@ -25,9 +25,9 @@ CREATE TABLE Site(
         site_url      Varchar (50) ,
         site_login    Varchar (50) ,
         site_password Varchar (50) ,
-        user_email    Varchar (50) NOT NULL
+        person_email  Varchar (50) NOT NULL
 	,CONSTRAINT Site_PK PRIMARY KEY (site_id)
 
-	,CONSTRAINT Site_User_FK FOREIGN KEY (user_email) REFERENCES User(user_email)
+	,CONSTRAINT Site_Person_FK FOREIGN KEY (person_email) REFERENCES Person(person_email)
 )ENGINE=InnoDB;
 
