@@ -1,0 +1,30 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #326e86;
+	background-color: #fff;
+	padding: 20px 20px;
+}
+
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+
+.button {
+	width: 50px;
+	height: 20px;
+	margin-right: 5px;
+	font-size: 10px;
+}
+
+#signupLink {
+	margin-left: 80%;
+}
+
+#signDiv {
+	display: none;
+}
