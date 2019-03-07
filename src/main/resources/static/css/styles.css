@@ -1,30 +1,19 @@
-body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.42857143;
-	color: #326e86;
-	background-color: #fff;
-	padding: 20px 20px;
+#divTitle{
+	text-align: center;
 }
 
-
-.container {
-	width: 100%;
-	height: 100%;
+#listTable{
+	border-collapse: collapse;
+	text-align: center;
 }
 
-
-.button {
-	width: 50px;
-	height: 20px;
-	margin-right: 5px;
-	font-size: 10px;
+.cellBorder {
+	border-style: solid;
+}
+#divTable{
+	text-align: center;
 }
 
-#signupLink {
-	margin-left: 80%;
-}
-
-#signDiv {
-	display: none;
+#btnAdd{
+	text-align: center;
 }

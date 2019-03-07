@@ -8,9 +8,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-@Configuration
-@EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+//@Configuration
+//@EnableWebSecurity
+/*public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void globalConfig(AuthenticationManagerBuilder auth , DataSource dataSource) throws Exception {
@@ -19,4 +19,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.usersByUsernameQuery("select person_email, person_password from Person where person_email=?");
 					
 	}
-}
+}*/

@@ -1,7 +1,5 @@
 package fr.silo.passwordManagement.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,18 +8,18 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Person")
-public class Person implements Serializable {
+public class Person {
 	
 	private String person_pseudo;
 	private String person_email;
-	private String person_paswword;
+	private String person_password;
 	
 	
-	public Person(String person_pseudo, String person_email, String person_paswword) {
+	public Person(String person_pseudo, String person_email, String person_password) {
 		super();
 		this.person_pseudo = person_pseudo;
 		this.person_email = person_email;
-		this.person_paswword = person_paswword;
+		this.person_password = person_password;
 	}
 
 	public Person() {
@@ -48,21 +46,20 @@ public class Person implements Serializable {
 		this.person_email = person_email;
 	}
 
-	@Column(name="person_çpaswword")
+	@Column(name="person_paswword")
 	public String getPerson_paswword() {
-		return person_paswword;
+		return person_password;
 	}
 
 
-	public void setPerson_paswword(String person_paswword) {
-		this.person_paswword = person_paswword;
+	public void setPerson_paswword(String person_password) {
+		this.person_password = person_password;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Person [person_pseudo=" + person_pseudo + ", person_email=" + person_email + ", person_paswword="
-				+ person_paswword + "]";
+		return "Person [person_pseudo=" + person_pseudo + ", person_email=" + person_email + "]";
 	}
 	
 	
