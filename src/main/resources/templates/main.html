@@ -6,6 +6,9 @@
 <title>main</title>
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -18,20 +21,54 @@
 		<table id="listTable">
 			<thead>
 				<tr>
-					<th class="cellBorder">url du site</th>
-					<th class="cellBorder">login</th>
-					<th class="cellBorder">password</th>
+					<th class="cellBorder">Site name</th>
+					<th class="cellBorder">Site url</th>
+					<th class="cellBorder">Login</th>
+					<th class="cellBorder">Password</th>
+					<th></th>
 					<th></th>
 				</tr>
 			</thead>
-			<tbody th:each="employe : ${siteList}">
-				<tr>
-					<td>
-						<th> th:text="${siteList.url}"
+			<tbody>
+				<tr th:each="site : ${siteList}">
+					<td class="cellBorder" th:text="${site.site_name}"	></td>
+					<td class="cellBorder" th:text="${site.site_url}"	></td>
+					<td class="cellBorder" th:text="${site.site_login}"	></td>
+					<td class="cellBorder" th:text="${site.site_password}"></td>
+					<td class="cellBorder" th:text="${site.person.person_email}"></td>
+					<td ></td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
+<div id="btnAdd"><input type="button" data-toggle="modal" data-target="#myModal" value="ajouter"></div>
+<div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" id="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">enter site info</h4>
+        </div>
+        <form action="#" th:action="@{/siteAdd}" th:object="${site}" method="post"class="modal-body" id="formModal">
+          <label>Site name</label><input type="text" name="site_name">
+          <label>Site url</label><input type="url" name="site_url">
+          <label>Site login</label><input type="text" name="site_login">
+          <label>Site password</label><input type="text" name="site_password">
+         <!--  <input type="text" th:value = "${sitelist.person.person_email}">-->
+         <div class="modal-footer">
+          <button type="submit" class="btn btn-default" id="validFormAdd">Valid</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
 </div>
-<div id="btnAdd"><input type="button" value="ajouter"></div>
 </body>
 </html>

@@ -46,13 +46,13 @@ public class Person {
 		this.person_email = person_email;
 	}
 
-	@Column(name="person_paswword")
-	public String getPerson_paswword() {
+	@Column(name="person_password")
+	public String getPerson_password() {
 		return person_password;
 	}
 
 
-	public void setPerson_paswword(String person_password) {
+	public void setPerson_password(String person_password) {
 		this.person_password = person_password;
 	}
 

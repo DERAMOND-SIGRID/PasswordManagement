@@ -8,10 +8,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Site")
+@Table(name="site")
 public class Site {
 
-	@Id
 	private long site_id;
 	private String site_name;
 	private String site_url;
