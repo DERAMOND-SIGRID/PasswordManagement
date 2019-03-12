@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import fr.silo.passwordManagement.dao.IrepositarySite;
+import fr.silo.passwordManagement.model.Person;
 import fr.silo.passwordManagement.model.Site;
 
 @Controller
@@ -23,15 +24,23 @@ public class MainPageController {
 	public String pageWelcome(Model model) {
 		ArrayList<Site> siteList = new ArrayList<Site>(); 
 		siteList = (ArrayList<Site>) irepoSite.findAll();
-		System.out.println(siteList.get(0).getPerson().getPerson_email());
+		//System.out.println(siteList.get(0).getPerson().getPerson_email());
 		model.addAttribute("siteList", siteList);
 		return "main";
 	}
 	
 	@PostMapping("/siteAdd")
-	public String siteAdd(@Valid Site site) {
-		System.out.println(site);
-		return "main";
+	public String siteAdd(@Valid Site site,Person person) {
+		ArrayList<Site> siteList = new ArrayList<Site>();
+		siteList = (ArrayList<Site>) irepoSite.findAll();
+		for(Site s : siteList){
+			if (s.getPerson().getPerson_email().equals(person.getPerson_email())) {
+				person = s.getPerson();
+				site.setPerson(person);
+			}
+		}
+		irepoSite.save(site);
+		return "redirect:/";
 	
 	}
 	

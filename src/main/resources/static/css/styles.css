@@ -20,4 +20,9 @@
 
 #modal-content{
 	width: 1100px;
+	margin-top: 150px;
+}
+
+#modal-dialog{
+margin-left: 15%;
 }
