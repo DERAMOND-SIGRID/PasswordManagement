@@ -18,11 +18,29 @@
 	text-align: center;
 }
 
-#modal-content{
-	width: 1100px;
-	margin-top: 150px;
+.btn{
+	width: 70px;
 }
 
-#modal-dialog{
-margin-left: 15%;
+#modal-footer{
+	border-top: hidden;
+}
+
+#modal-content{
+	width: auto;
+	margin-top: 250px;
+	display: inline-block; 
+}
+
+#myModal{
+text-align: center;
+margin-right: 200px;
+}
+
+#formModal{
+ width:auto; height:auto; position: absolute; 
+}
+
+#personModal{
+	margin-top: 5px;
 }
